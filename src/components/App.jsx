@@ -41,9 +41,7 @@ export const App = () => {
         title="Please Leave Feedback"
         children={
           <FeedbackOptions
-            good={good}
-            neutral={neutral}
-            bad={bad}
+            options={{ good, neutral, bad }}
             onLeaveFeedback={handleClick}
           />
         }
@@ -53,9 +51,7 @@ export const App = () => {
         children={
           countTotalFeedback() > 0 &&
           <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
+            options={{ good, neutral, bad }}
             total={countTotalFeedback()}
             positivePercentage={countPositiveFeedback()}
           />

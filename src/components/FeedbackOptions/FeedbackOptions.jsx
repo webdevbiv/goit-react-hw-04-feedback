@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function FeedbackOptions({ good, neutral, bad, onLeaveFeedback }) {
-    const options = { good, neutral, bad }
+function FeedbackOptions({ options, onLeaveFeedback }) {
     return (
         <>
             {Object.keys(options).map((item) => (
@@ -16,9 +15,11 @@ function FeedbackOptions({ good, neutral, bad, onLeaveFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
+    options: PropTypes.shape({
+        good: PropTypes.number.isRequired,
+        neutral: PropTypes.number.isRequired,
+        bad: PropTypes.number.isRequired,
+    }),
     onLeaveFeedback: PropTypes.func.isRequired
 }
 
